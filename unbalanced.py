@@ -1,6 +1,7 @@
 import random
 from readData import trainData
-
+import numpy as np
+# need to shuffle data
 
 class BalancedData:
 
@@ -18,16 +19,16 @@ class BalancedData:
 
         self.upsample()
         self.downsample()
-        self.smote()
 
     def upsample(self):
         self.upsampled = self.falseData[:]
         self.upsampled.extend(random.choices(self.trueData, k=len(self.falseData)))
+        self.upsampled = np.array(self.upsampled)
 
     def downsample(self):
         self.downsampled = self.trueData[:]
         self.downsampled.extend(random.choices(self.falseData,k=len(self.trueData)))
-
+        self.downsampled = np.array(self.downsampled)
 
 
 
