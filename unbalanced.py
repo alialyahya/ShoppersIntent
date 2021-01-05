@@ -3,6 +3,8 @@ from readData import trainData
 import numpy as np
 # need to shuffle data
 
+# Thank you to Jason Brownlee for providing resources on how to use SMOTE to balance data
+# source: https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/
 class BalancedData:
 
     def __init__(self, data):
